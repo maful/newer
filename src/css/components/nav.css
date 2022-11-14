@@ -1,0 +1,50 @@
+nav {
+  @apply relative w-full overflow-x-scroll p-6;
+
+  background-color: rgba(252, 252, 253, 0.95);
+
+  &::before {
+    @apply absolute h-[3px] w-full bg-sky-500;
+
+    content: "";
+    top: 0;
+    left: 0;
+  }
+
+  .topbar {
+    @apply relative mx-auto flex items-center;
+
+    &__logo-container {
+      @apply m-2 cursor-pointer border-none text-2xl shadow-none;
+    }
+
+    &__logo {
+      @apply h-6;
+    }
+  }
+
+  .navbar {
+    @apply ml-16 flex list-none space-x-10 overflow-auto p-0 uppercase;
+
+    &__item {
+      @apply inline-block text-base;
+    }
+
+    &__link {
+      @apply border-b border-sky-300 font-light text-sky-600 no-underline;
+
+      box-shadow: theme("colors.sky.300") 0 -2px 0 0 inset;
+      transition: background 0.2s ease-in;
+
+      &:hover {
+        @apply bg-sky-300;
+
+        transition: background 0.3s ease-in;
+      }
+
+      &--active {
+        @apply bg-sky-300;
+      }
+    }
+  }
+}

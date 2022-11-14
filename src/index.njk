@@ -1,0 +1,29 @@
+---
+title: Home
+layout: base.njk
+description: I'm a web developer, designer, open source contributor and maintainer, gamer, and farmer from Indonesia. It is important to me to do things I love.
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+
+<main class="home">
+  <section>
+    <div>
+      {% image "./src/assets/name.svg", "My Name" %}
+    </div>
+  </section>
+
+  <div class="home__description">
+    <p>
+      I'm a web developer, designer, open source contributor and maintainer, gamer, and farmer from Indonesia.
+      It is important to me to do things I love.
+    </p>
+  </div>
+
+  <section>
+    <div>
+      {% image "https://holopin.me/maful", "Awards" %}
+    </div>
+  </section>
+</main>

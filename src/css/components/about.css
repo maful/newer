@@ -1,0 +1,189 @@
+.about {
+  @apply mx-auto px-4 pb-12 pt-20;
+
+  @media screen(sm) {
+    @apply px-14;
+  }
+
+  @media screen(md) {
+    @apply px-16 pt-24;
+  }
+
+  @media screen(lg) {
+    @apply px-12;
+  }
+
+  &__wrapper {
+    @apply flex flex-col gap-y-8;
+
+    @media screen(md) {
+      @apply gap-y-12;
+    }
+
+    @media screen(lg) {
+      @apply grid grid-cols-12 gap-x-8 gap-y-4;
+    }
+  }
+
+  &__illustration {
+    @apply block;
+
+    @media screen(md) {
+      @apply col-span-6;
+    }
+  }
+
+  &__description {
+    @apply block px-4 text-base font-light;
+
+    @media screen(sm) {
+      @apply text-lg;
+    }
+
+    @media screen(md) {
+      @apply text-2xl;
+    }
+
+    @media screen(lg) {
+      @apply col-span-6 text-lg;
+    }
+  }
+
+  .bio {
+    @apply space-y-6;
+
+    &__heading {
+      @apply mb-4 text-4xl font-semibold text-sky-700;
+      line-height: 1.3;
+
+      @media screen(sm) {
+        @apply max-w-md;
+        font-size: clamp(3.052rem, 5vw, 2rem);
+      }
+
+      @media screen(md) {
+        font-size: clamp(3.052rem, 5vw, 3rem);
+      }
+    }
+
+    .projects {
+      @apply flex flex-col gap-y-4;
+
+      @media screen(md) {
+        @apply grid grid-cols-2 gap-4;
+      }
+
+      .project {
+        @apply relative rounded-md p-8;
+
+        @media screen(md) {
+          @apply rounded-lg;
+        }
+
+        &__illustration {
+          @apply mb-4;
+
+          min-height: 204px;
+        }
+
+        &__title {
+          @apply mb-2 text-lg font-medium text-sky-900;
+
+          @media screen(md) {
+            @apply my-2 text-lg font-medium text-sky-900;
+          }
+        }
+
+        &__description {
+          @apply text-base text-sky-900;
+        }
+
+        &--cyan {
+          @apply bg-cyan-300;
+
+          &:hover {
+            @apply opacity-90;
+          }
+        }
+
+        &--amber {
+          @apply bg-amber-300;
+
+          &:hover {
+            @apply opacity-90;
+          }
+        }
+
+        &--emerald {
+          @apply bg-emerald-300;
+
+          &:hover {
+            @apply opacity-90;
+          }
+        }
+
+        &--gradient {
+          background-color: #d9afd9;
+          background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+
+          &:hover {
+            @apply opacity-90;
+          }
+        }
+
+        a {
+          @apply absolute cursor-pointer border-none shadow-none;
+
+          bottom: 0;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 2;
+
+          &:hover {
+            background-color: unset;
+          }
+        }
+      }
+    }
+
+    h2 {
+      @apply text-2xl font-semibold text-sky-700;
+
+      line-height: 1.3;
+    }
+
+    p {
+      line-height: 1.75;
+    }
+
+    a {
+      @apply border-b border-sky-300 text-sky-600 no-underline;
+
+      box-shadow: theme("colors.sky.300") 0 -2px 0 0 inset;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        @apply bg-sky-300;
+
+        transition: all 0.2s ease-in;
+      }
+    }
+
+    ul {
+      @apply pl-10;
+
+      li {
+        @apply pl-4;
+
+        line-height: 1.7;
+
+        &::marker {
+          @apply text-sm font-bold text-sky-500;
+
+          content: "■";
+        }
+      }
+    }
+  }
+}

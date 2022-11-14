@@ -1,0 +1,164 @@
+.main {
+  @apply overflow-hidden pb-8 pt-8;
+  max-width: 100vw;
+
+  @media screen(md) {
+    @apply pt-16;
+  }
+
+  @media screen(lg) {
+    @apply pt-20;
+  }
+
+  .post {
+    @apply flex flex-col gap-y-8 px-4;
+
+    @media screen(md) {
+      @apply px-8;
+    }
+
+    @media screen(lg) {
+      @apply grid grid-cols-12 px-12;
+      column-gap: 2vw;
+      row-gap: 2vh;
+    }
+  }
+
+  .article {
+    @apply px-4;
+
+    @media screen(lg) {
+      @apply col-span-8 py-0 px-8;
+    }
+
+    &__heading {
+      @apply mb-2 text-3xl font-semibold text-sky-700;
+      line-height: 1.3;
+
+      @media screen(md) {
+        font-size: clamp(3.052rem, 5vw, 3rem);
+        line-height: 1.5;
+      }
+    }
+
+    &__time {
+      @apply text-sm text-sky-600;
+    }
+
+    &__section {
+      @apply space-y-6 py-8 px-0 text-base font-light;
+      color: rgb(34, 31, 44);
+
+      @media screen(md) {
+        @apply text-lg;
+      }
+
+      h2 {
+        @apply text-2xl font-semibold text-sky-700;
+        line-height: 1.3;
+      }
+
+      h3 {
+        @apply text-xl font-semibold text-sky-700;
+        line-height: 1.3;
+      }
+
+      p {
+        line-height: 1.7;
+
+        a {
+          @apply border-b border-sky-300 text-sky-600 no-underline;
+
+          box-shadow: theme("colors.sky.300") 0 -2px 0 0 inset;
+          transition: all 0.2s ease-in;
+
+          &:hover {
+            @apply bg-sky-300;
+
+            transition: all 0.2s ease-in;
+          }
+        }
+
+        code {
+          @apply rounded bg-sky-100 p-1;
+        }
+      }
+
+      ul {
+        @apply pl-10;
+
+        li {
+          @apply my-2 pl-4;
+
+          line-height: 1.7;
+
+          &::marker {
+            @apply text-sm font-bold text-sky-500;
+
+            content: "■";
+          }
+
+          code {
+            @apply rounded bg-sky-100 p-1;
+          }
+        }
+      }
+
+      blockquote {
+        @apply m-0 border-l-8 border-sky-500 bg-slate-200 p-4;
+
+        p {
+          @apply py-4;
+        }
+      }
+    }
+
+    .topics {
+      @apply mt-8 mb-8 block max-w-sm;
+
+      &__heading {
+        @apply mb-2 text-xl font-normal;
+      }
+
+      &__items {
+        @apply flex flex-row flex-wrap gap-2;
+      }
+
+      &__item {
+        @apply rounded-md bg-sky-200 px-2 py-1 text-sky-900;
+      }
+    }
+  }
+}
+
+.promotion {
+  @apply col-span-4;
+
+  &__content {
+    @apply rounded-[5rem] py-10 px-14;
+  }
+
+  &__title {
+    @apply mb-4 text-xl font-medium;
+  }
+
+  &__description {
+    @apply text-base font-light text-gray-700;
+  }
+
+  &--pink {
+    @apply bg-pink-50;
+  }
+
+  &--emerald {
+    @apply bg-emerald-50;
+  }
+
+  &--indigo {
+    @apply bg-indigo-50;
+  }
+
+  &--blue {
+    @apply bg-blue-50;
+  }
+}

@@ -1,0 +1,40 @@
+---
+title: Blog
+layout: base.njk
+permalink: /posts/
+description: Learn about web development, design, agriculture and games.
+eleventyNavigation:
+  key: Blog
+  order: 3
+---
+
+<main>
+  <div class="page">
+    <div class="page__wrapper">
+      <h1 class="page__title">Blog</h1>
+      <p class="page__description">Learn about web development, design, agriculture and games.</p>
+
+      <div class="posts">
+        {% for post in collections.posts | reverse %}
+          {%- set bgColor %}post--{{ post.data.color }}{% endset %}
+          <div class="post {{ bgColor }}">
+            <div class="post__topics">
+              {%- for tag in post.data.tags | filterTagList %}
+                <span class="topic">{{ tag }}</span>
+              {%- endfor %}
+            </div>
+            <div class="post__illustration">
+              {%- set illustration %}/src/assets/illustrations/{{ post.data.illustration }}.svg{% endset %}
+              {{ illustration | svgContents | safe }}
+            </div>
+            <h1 class="post__title">{{ post.data.title }}</h1>
+            <time class="post__time" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            <a href="{{ post.url | url }}">
+              <span class="sr-only">{{ post.data.title }}</span>
+            </a>
+          </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</main>

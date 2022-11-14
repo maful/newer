@@ -1,0 +1,171 @@
+.page {
+  @apply mx-auto px-8 py-12;
+
+  @media screen(md) {
+    @apply px-12 pb-12 pt-20;
+  }
+
+  &__title {
+    @apply mb-2 font-semibold text-sky-700;
+
+    font-size: clamp(3.052rem, 5vw, 3rem);
+    line-height: 1.3;
+  }
+
+  &__description {
+    @apply text-base font-light;
+  }
+
+  .posts {
+    @apply mt-8 flex flex-col gap-y-8;
+
+    @media screen(md) {
+      @apply grid grid-cols-12 gap-4;
+    }
+
+    @media screen(lg) {
+      @apply gap-8;
+    }
+
+    .post {
+      @apply relative  rounded-lg bg-sky-300 px-8 pt-8 pb-10;
+
+      @media screen(md) {
+        @apply col-span-6;
+      }
+
+      @media screen(lg) {
+        @apply col-span-4;
+      }
+
+      a {
+        @apply absolute cursor-pointer border-none shadow-none;
+
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+
+        &:hover {
+          background-color: unset;
+        }
+      }
+
+      &:hover {
+        @apply opacity-90;
+      }
+
+      &__title {
+        @apply my-3 text-xl font-semibold text-sky-900;
+      }
+
+      &__time {
+        @apply text-base text-sky-900;
+      }
+
+      &__topics {
+        @apply mb-4 flex flex-row flex-wrap gap-2;
+
+        .topic {
+          @apply rounded-md bg-sky-200/60 px-2 py-1 text-sky-900;
+        }
+      }
+
+      &--cyan {
+        @apply bg-cyan-300;
+      }
+
+      &--emerald {
+        @apply bg-emerald-300;
+      }
+
+      &--amber {
+        @apply bg-amber-300;
+      }
+
+      &--yellow {
+        @apply bg-yellow-300;
+      }
+
+      &--slate {
+        @apply bg-slate-300;
+      }
+
+      &--instagram-gradient {
+        background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+      }
+
+      &--warm-flame-gradient {
+        background-image: linear-gradient(
+          45deg,
+          #ff9a9e 0%,
+          #fad0c4 99%,
+          #fad0c4 100%
+        );
+      }
+
+      &--night-fade-gradient {
+        background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+      }
+
+      &--spring-warmth-gradient {
+        background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+      }
+
+      &--juicy-peach-gradient {
+        background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+      }
+
+      &--young-passion-gradient {
+        background-image: linear-gradient(
+          to right,
+          #ff8177 0%,
+          #ff867a 0%,
+          #ff8c7f 21%,
+          #f99185 52%,
+          #cf556c 78%,
+          #b12a5b 100%
+        );
+      }
+
+      &--lady-lips-gradient {
+        background-image: linear-gradient(
+          to top,
+          #ff9a9e 0%,
+          #fecfef 99%,
+          #fecfef 100%
+        );
+      }
+
+      &--sunny-morning-gradient {
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      }
+
+      &--rainy-ashville-gradient {
+        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+      }
+
+      &--frozen-dreams-gradient {
+        background-image: linear-gradient(
+          to top,
+          #fdcbf1 0%,
+          #fdcbf1 1%,
+          #e6dee9 100%
+        );
+      }
+
+      &--winter-neva-gradient {
+        background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+      }
+
+      &--dusty-grass-gradient {
+        background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+      }
+
+      &--tempting-azure-gradient {
+        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+      }
+    }
+  }
+}

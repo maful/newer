@@ -1,0 +1,51 @@
+/*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+  @apply my-4 overflow-x-auto rounded;
+}
+
+/*
+  Add some vertical padding and expand the width
+  to fill its container. The horizontal padding
+  comes at the line level so that background
+  colors extend edge to edge.
+  */
+pre.torchlight code {
+  @apply block min-w-max py-4 text-base;
+}
+
+/*
+  Horizontal line padding.
+  */
+pre.torchlight code .line {
+  @apply px-4;
+}
+
+/*
+  Push the code away from the line numbers and
+  summary caret indicators.
+  */
+pre.torchlight code .line-number,
+pre.torchlight code .summary-caret {
+  @apply mr-4;
+}
+
+/*
+  Blur and dim the lines that don't have the `.line-focus` class,
+  but are within a code block that contains any focus lines.
+*/
+.torchlight.has-focus-lines .line:not(.line-focus) {
+  transition: filter 0.35s, opacity 0.35s;
+  filter: blur(0.095rem);
+  opacity: 0.65;
+}
+
+/*
+When the code block is hovered, bring all the lines into focus.
+*/
+.torchlight.has-focus-lines:hover .line:not(.line-focus) {
+  filter: blur(0px);
+  opacity: 1;
+}

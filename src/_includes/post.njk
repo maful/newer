@@ -1,0 +1,37 @@
+---
+layout: base.njk
+---
+
+<main class="main">
+  <div class="main__content post">
+    <article class="article">
+      <h1 class="article__heading">{{ title }}</h1>
+      <time class="article__time" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      <div class="topics">
+        <h2 class="topics__heading">Topics</h2>
+        <div class="topics__items">
+          {%- for tag in tags | filterTagList %}
+            <span class="topics__item">{{ tag }}</span>
+          {%- endfor %}
+        </div>
+      </div>
+      <section class="article__section">
+        {{ content | safe }}
+      </section>
+    </article>
+    <section class="promotion">
+      {% set code = promotion_code if promotion_code else "people-management" | string %}
+      {% set promotion = promotions[code] %}
+      {% set bgColor = promotion.color if promotion.color else "pink" | string %}
+      <div class="promotion__content promotion--{{ bgColor }}">
+        <h2 class="promotion__title">{{ promotion.title }}</h2>
+        <p class="promotion__description">{{ promotion.description }}</p>
+        {% if promotion.link %}
+          <div class="mt-4">
+            <a href="{{ promotion.link | url }}" target="_blank">Read More</a>
+          </div>
+        {% endif %}
+      </div>
+    </section>
+  </div>
+</main>

@@ -1,0 +1,31 @@
+.home {
+  @apply mx-auto pt-8;
+
+  @media screen(sm) {
+    @apply pt-12;
+  }
+
+  &__description {
+    @apply mx-auto mt-8 mb-12 px-8 text-base font-light text-gray-500;
+
+    p {
+      line-height: 1.5;
+    }
+
+    @media screen(sm) {
+      @apply mb-16 px-10 text-xl;
+
+      p {
+        line-height: 1.7;
+      }
+    }
+
+    @media screen(md) {
+      @apply text-2xl;
+    }
+
+    @media screen(lg) {
+      @apply mb-24 px-16 text-3xl;
+    }
+  }
+}

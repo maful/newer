@@ -1,0 +1,48 @@
+.footer {
+  @apply relative w-full bg-gray-800 px-8 pt-8 pb-0 text-center text-gray-500;
+
+  &::before {
+    @apply absolute h-[3px] w-full bg-sky-500;
+
+    content: "";
+    top: -3px;
+    left: 0;
+  }
+
+  &__content {
+    @apply relative mx-auto max-w-4xl;
+  }
+
+  &__social-links {
+    @apply flex flex-row justify-center space-x-8 pb-4;
+
+    line-height: 1.7;
+
+    a {
+      @apply inline-block border-0 text-sky-400 no-underline shadow-none;
+    }
+
+    svg {
+      @apply w-8 fill-current;
+    }
+  }
+
+  &__copy {
+    @apply pb-4 text-base font-light text-white;
+
+    line-height: 1.7;
+
+    a {
+      @apply border-b border-sky-500 px-0 py-[2px];
+
+      line-height: 3;
+      transition: border 0.2s ease-in;
+
+      &:hover {
+        @apply border-b border-green-500;
+
+        transition: border 0.2s ease-in;
+      }
+    }
+  }
+}

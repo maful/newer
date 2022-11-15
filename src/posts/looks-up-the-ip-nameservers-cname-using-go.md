@@ -126,7 +126,7 @@ $ go run main.go
 
 `76.76.21.21` is the IP of the domain.
 
-## Lookup the CNAME
+### Lookup the CNAME
 
 Lastly, we will use `LookupCNAME` function from net library to get CNAME ([wikipedia](https://en.wikipedia.org/wiki/CNAME_record)).
 

@@ -1,7 +1,10 @@
 nav {
-  @apply relative w-full overflow-x-scroll p-6;
-
+  @apply relative w-full overflow-x-scroll p-0 pt-6;
   background-color: rgba(252, 252, 253, 0.95);
+
+  @media screen(sm) {
+    @apply p-6;
+  }
 
   &::before {
     @apply absolute h-[3px] w-full bg-sky-500;
@@ -12,10 +15,22 @@ nav {
   }
 
   .topbar {
-    @apply relative mx-auto flex items-center;
+    @apply relative mx-auto flex items-center justify-between px-6;
+
+    @media screen(sm) {
+      @apply p-0;
+    }
+
+    @media screen(md) {
+      @apply justify-start;
+    }
 
     &__logo-container {
-      @apply m-2 cursor-pointer border-none text-2xl shadow-none;
+      @apply m-0 mb-4 cursor-pointer border-none shadow-none;
+
+      @media screen(sm) {
+        @apply m-2;
+      }
     }
 
     &__logo {
@@ -24,7 +39,11 @@ nav {
   }
 
   .navbar {
-    @apply ml-16 flex list-none space-x-10 overflow-auto p-0 uppercase;
+    @apply hidden overflow-auto p-0 uppercase;
+
+    @media screen(sm) {
+      @apply ml-16 flex list-none space-x-10;
+    }
 
     &__item {
       @apply inline-block text-base;
@@ -32,15 +51,33 @@ nav {
 
     &__link {
       @apply border-b border-sky-300 font-light text-sky-600 no-underline;
-
       box-shadow: theme("colors.sky.300") 0 -2px 0 0 inset;
       transition: background 0.2s ease-in;
 
       &:hover {
         @apply bg-sky-300;
-
         transition: background 0.3s ease-in;
       }
+
+      &--active {
+        @apply bg-sky-300;
+      }
+    }
+  }
+
+  .mobile-navbar {
+    @apply flex list-none space-x-6 overflow-auto bg-gray-100/50 p-0 px-6 py-6 uppercase;
+
+    @media screen(sm) {
+      @apply hidden;
+    }
+
+    &__item {
+      @apply inline-block text-base;
+    }
+
+    &__link {
+      @apply border-b border-sky-300 font-light text-sky-600 no-underline;
 
       &--active {
         @apply bg-sky-300;

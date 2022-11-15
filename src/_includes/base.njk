@@ -28,6 +28,15 @@
         </a>
       </div>
     </div>
+    <ul class="mobile-navbar">
+      {%- for entry in navPages %}
+        <li class="mobile-navbar__item">
+          <a href="{{ entry.url }}" class="mobile-navbar__link{% if entry.url == page.url %} mobile-navbar__link--active{% endif %}">
+            {{ entry.title }}
+          </a>
+        </li>
+      {%- endfor %}
+    </ul>
   </nav>
 
   {{ content | safe }}

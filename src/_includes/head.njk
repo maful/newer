@@ -15,5 +15,5 @@
 <meta name="twitter:site" content="@mafulprayoga"/>
 <meta name="twitter:creator" content="@mafulprayoga"/>
 {% if opengrapgh %}
-  <meta property="og:image" content="/assets/og/{{ title | slugify }}.jpg" />
+  <meta property="og:image" content="{{ environment.app_url }}/assets/og/{{ title | slugify }}.jpg" />
 {% endif %}

@@ -1,5 +1,5 @@
 module.exports = function() {
   return {
-    app_url: process.env.VERCEL_URL || "http://localhost:8080"
+    app_url: process.env.APP_URL || "http://localhost:8080"
   }
 }

@@ -21,7 +21,7 @@ module.exports = {
   // https://torchlight.dev/docs/options
   options: {
     // Turn line numbers on or off globally.
-    lineNumbers: true,
+    lineNumbers: false,
 
     // Control the `style` attribute applied to line numbers.
     // lineNumbersStyle: '',

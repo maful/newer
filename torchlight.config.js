@@ -1,7 +1,7 @@
 module.exports = {
   // Your token from https://torchlight.dev
   // token: process.env.TORCHLIGHT_TOKEN,
-  token: "torch_wIhyQFYyIGv03Qajyw9YqyDIXSHT4ILD2SuacCRd",
+  token: process.env.TORCHLIGHT_TOKEN,
 
   // The Torchlight client caches highlighted code blocks. Here you
   // can define which directory you'd like to use. You'll likely

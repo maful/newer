@@ -170,9 +170,9 @@ You may wonder how Simple Form generate the text field for the Title and textare
 
 In order to change the default input type, you need to check whether the type is supported. Take an example, you want to change the input type of **Body** to text field instead of textarea. Open up the `_form.html.erb` under the `posts` directory in the views, simply add `as: :<type>` after the field name. Check out [List of available input types](https://github.com/heartcombo/simple_form#available-input-types-and-defaults-for-each-column-type).
 
-```html
-<%= form.input :body %> <!-- [tl! remove] -->
-<%= form.input :body, as: :string %> <!-- [tl! add] -->
+```erb
+<%= form.input :body %> <%# [tl! remove] %>
+<%= form.input :body, as: :string %> <%# [tl! add] %>
 ```
 
 Go back to your browser, reload and see the result. Instead of textarea, it will rendered as text field.
@@ -183,9 +183,9 @@ Go back to your browser, reload and see the result. Instead of textarea, it will
 
 Yes, Simple Form comes with the flexibility by default. But, if you have a case where you need to add a style or classes in place you read in the right place. For instance, adding a css class to **Body** field wrapper to add a margin top. Open your form file and change as follow
 
-```html
-<%= form.input :body %> <!-- [tl! remove] -->
-<%= form.input :body, wrapper_html: { class: "mt-4" } %> <!-- [tl! add] -->
+```erb
+<%= form.input :body %> <%# [tl! remove] %>
+<%= form.input :body, wrapper_html: { class: "mt-4" } %> <%# [tl! add] %>
 ```
 
 And here is the result, now see there is a margin between Title and Body field
@@ -202,9 +202,9 @@ And not only can change the wrapper attribute, you can also change the label and
 
 Absolutely! Here is the example case where you don’t want to show the label text but still want to show the error message or the other while still using simple form. Let’s hide the label text for **Title** field.
 
-```html
-<%= form.input :title %> <!-- [tl! remove] -->
-<%= form.input :title, label: false %> <!-- [tl! add] -->
+```erb
+<%= form.input :title %> <%# [tl! remove] %>
+<%= form.input :title, label: false %> <%# [tl! add] %>
 ```
 
 Check the result, as you can see the `label` has been omitted from the form

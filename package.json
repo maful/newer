@@ -7,7 +7,7 @@
     "clean": "rimraf public",
     "dev:css": "postcss ./src/css/application.css -o public/css/application.css --watch",
     "dev:eleventy": "eleventy --serve",
-    "dev": "npm-run-all clean --parallel dev:*",
+    "dev": "TORCHLIGHT_TOKEN=torch_xoXjZQhxGYxzoCQS9HvczhUtBIbISMDg9Nvgu0jA npm-run-all clean --parallel dev:*",
     "build:css": "postcss src/css/application.css -o public/css/application.css",
     "build:css-minify": "lightningcss --minify public/css/application.css -o public/css/application.css",
     "build:eleventy": "ELEVENTY_PRODUCTION=true eleventy",

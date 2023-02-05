@@ -1,7 +1,8 @@
 const data = {
   "people-management": {
-    "title": "People Management - Libur.run",
-    "description": "Manage your entire team in a single platform. Leaves, Claims, Payroll, and more. Stay tuned! Libur.run will premiere in late 2022.",
+    "title": "HR Platform - Libur.run",
+    "description": "Empower Your HR with Next-Gen Open Source Self-Serve Platform. Streamline your HR management and take control of your time off requests with ease.",
+    "link": "https://github.com/maful/libur.run"
   },
   "currency-conversion-ruby": {
     "title": "Gem: Currency Conversion",

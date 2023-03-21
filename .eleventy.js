@@ -73,6 +73,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/css/');
   eleventyConfig.addPassthroughCopy("src/assets/favicon");
   eleventyConfig.addPassthroughCopy("src/assets/og");
+  eleventyConfig.addPassthroughCopy("src/assets/cv.pdf");
   eleventyConfig.setUseGitIgnore(false);
 
   function filterTagList(tags) {

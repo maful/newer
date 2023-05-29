@@ -37,14 +37,12 @@ type User struct {
 Create a development database branch called `add-users-table`.
 
 ```
-torchlight! {"lineNumbers": false}
 $ pscale branch create fiber-pscale add-users-table
 ```
 
 Open a new terminal tab, we're going to connect to the database inside add-users-table branch and listen to 3309 PORT. See more [Connect using client certificates](https://docs.planetscale.com/tutorials/connect-any-application#connect-using-client-certificates).
 
 ```
-torchlight! {"lineNumbers": false}
 $ pscale connect fiber-pscale add-users-table --port 3309
 ```
 
@@ -76,21 +74,19 @@ func ConnectDatabase() {
 open your `main.go`, and call the `ConnectDatabase` function to migrate the tables and connect to the database.
 
 ```go
-// torchlight! {"lineNumbers": false}
 import (
-    "github.com/maful/fiber-pscale/models" // [tl! ++]
+    "github.com/maful/fiber-pscale/models" // shada:add
 )
 
 func main() {
     // ...
-    models.ConnectDatabase() // [tl! ++]
+    models.ConnectDatabase() // shada:add
 }
 ```
 
 then run the app `go run cmd/main.go`, Gorm will automatically migrate the table into `add-users-table` branch. How to know if the migration is success? You can check in the PlanetScale dashboard for the following branch, or use CLI to see the schema for `add-users-table` branch.
 
 ```
-torchlight! {"lineNumbers": false}
 $ pscale branch schema fiber-pscale add-users-table
 -- users --
 CREATE TABLE `users` (

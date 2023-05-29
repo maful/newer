@@ -19,7 +19,6 @@ tags:
 Again, add a new function called `UpdateUser` in the users handler.
 
 ```go
-// torchlight! {"lineNumbers": false}
 func UpdateUser(c *fiber.Ctx) error {
     // first, check if the user is exist
     user := models.User{}
@@ -54,15 +53,13 @@ func UpdateUser(c *fiber.Ctx) error {
 register `UpdateUser` in the `main.go` under the
 
 ```go
-// torchlight! {"lineNumbers": false}
 app.Post("/users", handlers.CreateUser)
-app.Put("/users/:id", handlers.UpdateUser) // [tl! add]
+app.Put("/users/:id", handlers.UpdateUser) // shada:add
 ```
 
 now, re-run the application. Update the user that we created before.
 
-```curl
-# torchlight! {"lineNumbers": false}
+```bash
 curl --location --request PUT 'http://localhost:3000/users/1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -88,8 +85,7 @@ response
 
 when the user doesn't exist
 
-```curl
-# torchlight! {"lineNumbers": false}
+```bash
 curl --location --request PUT 'http://localhost:3000/users/100' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -110,7 +106,6 @@ response
 Add the delete user function at the bottom of the users handler.
 
 ```go
-// torchlight! {"lineNumbers": false}
 func DeleteUser(c *fiber.Ctx) error {
     // first, check if the user is exist
     user := models.User{}
@@ -132,15 +127,13 @@ func DeleteUser(c *fiber.Ctx) error {
 register the function in `main.go`
 
 ```go
-// torchlight! {"lineNumbers": false}
 app.Put("/users/:id", handlers.UpdateUser)
-app.Delete("/users/:id", handlers.DeleteUser) // [tl! add]
+app.Delete("/users/:id", handlers.DeleteUser) // shada:add
 ```
 
 so, create a new user again
 
-```curl
-# torchlight! {"lineNumbers": false}
+```bash
 curl --location --request POST 'http://localhost:3000/users' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -152,8 +145,7 @@ curl --location --request POST 'http://localhost:3000/users' \
 
 see the `id` from the response, we will delete that user
 
-```curl
-# torchlight! {"lineNumbers": false}
+```bash
 curl --location --request DELETE 'http://localhost:3000/users/2'
 ```
 

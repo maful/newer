@@ -31,7 +31,6 @@ I don't want to explain how to setup the CLI, PlanetScale's team has managed to 
 Once success to setup the CLI, then create a database called `fiber-pscale` and specify the region of your database. I recommended to using the region that close that where you are. In my case I would like to use Asia Pacific Singapore. You can check the list of region, there are 6 regions at the moment.
 
 ```
-torchlight! {"lineNumbers": false}
 $ pscale region list
   NAME (6)                 SLUG           ENABLED
  ------------------------ -------------- ---------
@@ -46,7 +45,6 @@ $ pscale region list
 Create database
 
 ```
-torchlight! {"lineNumbers": false}
 $ pscale database create fiber-pscale --region ap-southeast
 Database fiber-pscale was successfully created.
 ```
@@ -56,7 +54,6 @@ Database fiber-pscale was successfully created.
 We are going to use [go modules](https://go.dev/blog/using-go-modules), first we create empty directory and then initialize the modules. You can use your repo url or application name. In this case, I'm using my repo url.
 
 ```
-torchlight! {"lineNumbers": false}
 mkdir fiber-pscale && cd fiber-pscale
 go mod init github.com/maful/fiber-pscale
 ```
@@ -68,7 +65,6 @@ Then, there are 3 packages we're going to build. Package means the directory. Cr
 - models: contains data structure for the application
 
 ```
-torchlight! {"lineNumbers": false}
 mkdir cmd
 mkdir handlers
 mkdir models
@@ -79,7 +75,6 @@ Since we are going to use Fiber and PlanetScale, install the modules
 To access PlanetScale, we can use ORM from Go called [Gorm](https://gorm.io/), and since the PlanetScale database is built on top Vitess (MySQL), install the MySQL driver as well.
 
 ```
-torchlight! {"lineNumbers": false}
 # install fiber
 $ go get -u github.com/gofiber/fiber/v2
 
@@ -121,7 +116,6 @@ func main() {
 it will create a new instance of fiber server, and listen to port 3000, back to terminal and run the main.go.
 
 ```
-torchlight! {"lineNumbers": false}
 $ go run cmd/main.go
  ┌───────────────────────────────────────────────────┐
  │              Fiber with Planetscale               │
@@ -136,8 +130,7 @@ $ go run cmd/main.go
 
 and then you can access it at http://localhost:3000, below is an example with the curl command.
 
-```curl
-torchlight! {"lineNumbers": false}
+```bash
 curl --location --request GET 'http://localhost:3000'
 {"message":"Hello world"}
 ```

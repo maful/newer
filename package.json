@@ -7,7 +7,7 @@
     "clean": "rimraf public",
     "dev:css": "postcss ./src/css/application.css -o public/css/application.css --watch",
     "dev:eleventy": "eleventy --serve",
-    "dev": "TORCHLIGHT_TOKEN=torch_xoXjZQhxGYxzoCQS9HvczhUtBIbISMDg9Nvgu0jA npm-run-all clean --parallel dev:*",
+    "dev": "npm-run-all clean --parallel dev:*",
     "build:css": "postcss src/css/application.css -o public/css/application.css",
     "build:css-minify": "lightningcss --minify public/css/application.css -o public/css/application.css",
     "build:eleventy": "ELEVENTY_PRODUCTION=true eleventy",
@@ -33,7 +33,7 @@
     "tailwindcss": "^3.2.2"
   },
   "dependencies": {
-    "@torchlight-api/torchlight-cli": "^0.1.7",
+    "@maful/shada-it": "^0.5.0",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "html-minifier": "^4.0.0",
     "lightningcss-cli": "^1.16.1",

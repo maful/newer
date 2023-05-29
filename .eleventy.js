@@ -1,4 +1,3 @@
-const { execSync } = require('child_process');
 const path = require("path");
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
@@ -8,6 +7,7 @@ const svgContents = require("eleventy-plugin-svg-contents");
 const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const ShadaIt = require("@maful/shada-it").default
 
 async function imageShortcode(src, alt, options = {}) {
   const sizes = options.sizes || "100vw";
@@ -64,6 +64,8 @@ module.exports = function(eleventyConfig) {
     globalAttributes: {
       sizes: "100vw"
     }
+  }).use(ShadaIt, {
+    theme: 'dracula'
   });
   eleventyConfig.setLibrary('md', markdownLibrary)
 
@@ -104,11 +106,6 @@ module.exports = function(eleventyConfig) {
     }
 
     return content;
-  });
-
-  eleventyConfig.on('eleventy.after', async () => {
-    console.log('Building torchlight...');
-    console.log(execSync('npx torchlight').toString());
   });
 
   return {

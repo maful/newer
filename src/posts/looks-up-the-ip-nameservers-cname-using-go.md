@@ -45,7 +45,6 @@ func main() {
 Build and run the program with `go run main.go`, make sure you already in the directory.
 
 ```
-# torchlight! {"lineNumbers": false}
 $ go run main.go
 Hello from APP
 ```
@@ -57,23 +56,22 @@ As you can see, the program will print Hello from APP using `Println` from the [
 Open `main.go` and remove the `Println` line as before, and now we're going to use the `net` package to lookup the DNS name. First, create a variable to store the domain name inside the main function.
 
 ```go
-// torchlight! {"lineNumbers": false}
-import "fmt" // [tl! remove]
-import ( // [tl! add:3]
-    "fmt"
-    "net"
-)
+import "fmt" // shada:remove
+import ( // shada:add
+    "fmt" // shada:add
+    "net" // shada:add
+) // shada:add
 
-fmt.Println("Hello from APP") // [tl! remove]
-// Define domain name [tl! add:2]
-host := "maful.web.id"
-fmt.Printf("Domain: %s\n\n", host)
+fmt.Println("Hello from APP") // shada:remove
+// Define domain name
+host := "maful.web.id" // shada:add
+fmt.Printf("Domain: %s\n\n", host) // shada:add
 ```
 
 Then, use LookupNS function from net package
 
 ```go
-// Lookup the DNS Records from the domain name [tl! reindex(13)]
+// Lookup the DNS Records from the domain name
 ns, err := net.LookupNS(host)
 if err != nil {
     panic(err)
@@ -83,7 +81,7 @@ if err != nil {
 `LookupNS` will return pointer of `NS` array, so that we have to looping the `ns` variable to print the Nameserver. If an error occurs, stop the program immediately by using `panic`.
 
 ```go
-// Looping the Nameserver and ignore the index [tl! reindex(19)]
+// Looping the Nameserver and ignore the index
 for _, v := range ns {
     fmt.Println(v.Host)
 }
@@ -93,7 +91,6 @@ fmt.Println()
 Finally, build and run again. You should see the list of Nameserver for the given domain name, in this case is my domain.
 
 ```
-# torchlight! {"lineNumbers": false}
 $ go run main.go
 ns1.vercel-dns.com.
 ns2.vercel-dns.com.
@@ -104,7 +101,7 @@ ns2.vercel-dns.com.
 Secondly, we still use the same package to lookup the IP addresses with [LookupIP](https://pkg.go.dev/net#LookupIP) function.
 
 ```go
-fmt.Println("Looks up the IP Addresses") // [tl! reindex(25)]
+fmt.Println("Looks up the IP Addresses")
 ips, err := net.LookupIP(host)
 if err != nil {
     panic(err)
@@ -118,7 +115,6 @@ fmt.Println()
 `LookupIP` will return a slice of bytes, so we just need to to use index to get the IP. Here is the result so far when you build and run the program.
 
 ```
-// torchlight! {"lineNumbers": false}
 $ go run main.go
 
 76.76.21.21
@@ -131,7 +127,7 @@ $ go run main.go
 Lastly, we will use `LookupCNAME` function from net library to get CNAME ([wikipedia](https://en.wikipedia.org/wiki/CNAME_record)).
 
 ```go
-fmt.Println("Looks up the CNAME") // [tl! reindex(35)]
+fmt.Println("Looks up the CNAME")
 cname, err := net.LookupCNAME(host)
 if err != nil {
     panic(err)
@@ -143,7 +139,6 @@ fmt.Println(cname)
 We don't need looping like the previous one, we just print the `cname` directly because `LookupCNAME` returns string. Here is the result:
 
 ```
-// torchlight! {"lineNumbers": false}
 $ go run main.go
 
 maful.web.id.
@@ -201,7 +196,6 @@ func main() {
 Full result
 
 ```
-// torchlight! {"lineNumbers": false}
 $ go run main.go
 
 Domain: maful.web.id

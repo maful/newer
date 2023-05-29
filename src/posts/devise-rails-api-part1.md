@@ -26,7 +26,6 @@ At the time I'm writing this post, Devise has been downloaded over 92 million do
 First, create rails api and in this case I will use postgresql as a database, you can choose whatever you want
 
 ```
-# torchlight! {"lineNumbers": false}
 $ rails new devise-api --api --database=postgresql
 ```
 
@@ -35,14 +34,12 @@ $ rails new devise-api --api --database=postgresql
 Then, let's install devise gem. Open `Gemfile` file and add devise then run bundle install
 
 ```ruby
-# torchlight! {"lineNumbers": false}
 gem 'devise', '~> 4.7', '>= 4.7.3'
 ```
 
 Once finish to install the gem, the next step is generate devise in the app. Open the terminal and run
 
 ```
-# torchlight! {"lineNumbers": false}
 $ rails generate devise:install
 Running via Spring preloader in process 2934
       create  config/initializers/devise.rb
@@ -53,7 +50,6 @@ Running via Spring preloader in process 2934
 Create user model
 
 ```
-# torchlight! {"lineNumbers": false}
 $ rails generate devise User
 ```
 
@@ -62,14 +58,12 @@ $ rails generate devise User
 Initalize the database
 
 ```
-# torchlight! {"lineNumbers": false}
 $ rails db:create
 ```
 
 Migrate the database
 
 ```
-# torchlight! {"lineNumbers": false}
 $ rails db:migrate
 ```
 
@@ -78,7 +72,6 @@ Actually, you can check the routing of Devise in the terminal with `rails routes
 After success install devise, we can verify the installation by doing the register, for this case I'm gonna use Postman, before that we should run the server with `rails s` in the terminal, make sure you already in the root directory of project.
 
 ```
-# torchlight! {"lineNumbers": false}
 $ rails s
 => Booting Puma
 => Rails 6.1.3 application starting in development

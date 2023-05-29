@@ -7,6 +7,7 @@ const svgContents = require("eleventy-plugin-svg-contents");
 const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const ShadaIt = require("@maful/shada-it").default
 
 async function imageShortcode(src, alt, options = {}) {
   const sizes = options.sizes || "100vw";
@@ -63,6 +64,8 @@ module.exports = function(eleventyConfig) {
     globalAttributes: {
       sizes: "100vw"
     }
+  }).use(ShadaIt, {
+    theme: 'dracula'
   });
   eleventyConfig.setLibrary('md', markdownLibrary)
 

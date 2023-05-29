@@ -90,11 +90,10 @@ rails g scaffold Post title body:text
 - Then migrate the database by running `rails db:migrate`
 - Add a validation in Post model, open `app/models/post.rb` . We will add validation for title and body is required
 
-```ruby
-# torchlight! {"lineNumbers": true}
+```ruby {lineNumbers:true}
 class Post < ApplicationRecord
-  validates :title, presence: true # [tl! add]
-  validates :body, presence: true # [tl! add]
+  validates :title, presence: true # shada:add
+  validates :body, presence: true # shada:add
 end
 ```
 
@@ -128,8 +127,7 @@ rails generate simple_form:install --bootstrap
 - Now check the configuration on `config/initializers/simple_form_bootstrap.rb` and you'll see the configuration for Bootstrap Forms. Don't forget to stop or restart the server.
 - Open up the form file `app/views/posts/_form.html.erb`. Delete all the existing code and replace with the following code
 
-```erb
-# torchlight! {"lineNumbers": true}
+```erb {lineNumbers:true}
 <%= simple_form_for post do |form| %>
   <%= form.input :title %>
   <%= form.input :body %>
@@ -145,11 +143,10 @@ rails generate simple_form:install --bootstrap
 Under the hood, Simple Form building your form component based on the configuration. Now, let’s take a look back on `config/initializers/simple_form_bootstrap.rb` and find the `:vertical_form` wrapper, usually in line 52
 
 ```ruby
-# torchlight! {"lineNumbers": true}
-# vertical forms [tl! reindex(49)]
+# vertical forms
 #
 # vertical default_wrapper
-config.wrappers :vertical_form, tag: 'div', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b| # [tl! focus]
+config.wrappers :vertical_form, tag: 'div', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b| # shada:focus
   b.use :html5
   b.use :placeholder
 ```
@@ -171,8 +168,8 @@ You may wonder how Simple Form generate the text field for the Title and textare
 In order to change the default input type, you need to check whether the type is supported. Take an example, you want to change the input type of **Body** to text field instead of textarea. Open up the `_form.html.erb` under the `posts` directory in the views, simply add `as: :<type>` after the field name. Check out [List of available input types](https://github.com/heartcombo/simple_form#available-input-types-and-defaults-for-each-column-type).
 
 ```erb
-<%= form.input :body %> <%# [tl! remove] %>
-<%= form.input :body, as: :string %> <%# [tl! add] %>
+<%= form.input :body %> <%# shada:remove %>
+<%= form.input :body, as: :string %> <%# shada:add %>
 ```
 
 Go back to your browser, reload and see the result. Instead of textarea, it will rendered as text field.
@@ -184,8 +181,8 @@ Go back to your browser, reload and see the result. Instead of textarea, it will
 Yes, Simple Form comes with the flexibility by default. But, if you have a case where you need to add a style or classes in place you read in the right place. For instance, adding a css class to **Body** field wrapper to add a margin top. Open your form file and change as follow
 
 ```erb
-<%= form.input :body %> <%# [tl! remove] %>
-<%= form.input :body, wrapper_html: { class: "mt-4" } %> <%# [tl! add] %>
+<%= form.input :body %> <%# shada:remove %>
+<%= form.input :body, wrapper_html: { class: "mt-4" } %> <%# shada:add %>
 ```
 
 And here is the result, now see there is a margin between Title and Body field
@@ -203,8 +200,8 @@ And not only can change the wrapper attribute, you can also change the label and
 Absolutely! Here is the example case where you don’t want to show the label text but still want to show the error message or the other while still using simple form. Let’s hide the label text for **Title** field.
 
 ```erb
-<%= form.input :title %> <%# [tl! remove] %>
-<%= form.input :title, label: false %> <%# [tl! add] %>
+<%= form.input :title %> <%# shada:remove %>
+<%= form.input :title, label: false %> <%# shada:add %>
 ```
 
 Check the result, as you can see the `label` has been omitted from the form

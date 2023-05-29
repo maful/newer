@@ -33,6 +33,7 @@
     "tailwindcss": "^3.2.2"
   },
   "dependencies": {
+    "@maful/shada-it": "^0.5.0",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "html-minifier": "^4.0.0",
     "lightningcss-cli": "^1.16.1",

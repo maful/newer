@@ -37,7 +37,7 @@ FROM ruby:2.7.3
 - Create user and install required packages
 
 ```dockerfile
-# argument [tl! reindex(3)]
+# argument
 ARG WORK_DIR=/my_app
 ARG USER=my_user
 ARG HOME=/home/${USER}
@@ -53,7 +53,7 @@ RUN apt-get update -qq && apt-get upgrade -y && apt-get install -y postgresql-cl
 - then, copy all necessary files from the host machine and then install the app dependencies
 
 ```dockerfile
-# set WORK_DIR [tl! reindex(15)]
+# set WORK_DIR
 RUN mkdir ${WORK_DIR}
 COPY Gemfile ${WORK_DIR}/Gemfile
 COPY Gemfile.lock ${WORK_DIR}/Gemfile.lock
@@ -73,7 +73,7 @@ RUN bundle install
 - Add script and main process, and here we expose port 3000 from the image
 
 ```dockerfile
-# Add a script to be executed every time the container starts. [tl! reindex(31)]
+# Add a script to be executed every time the container starts.
 USER ${USER}
 COPY entrypoint.sh /usr/bin/
 ENTRYPOINT ["./usr/bin/entrypoint.sh/"]
@@ -129,7 +129,6 @@ CMD ["rails", "server", "-b", "0.0.0.0"]
 The last thing, create `entrypoint.sh` in your root project and add this script.
 
 ```bash
-# torchlight! {"lineNumbers": false}
 #!/bin/bash
 set -e
 
@@ -184,7 +183,6 @@ volumes:
 If you notice in the compose file above, we set the environment variable for `DATABASE_USERNAME`, `DATABASE_PASSWORD`, and `DATABASE_HOST`. Then, update the `config/database.yml` for the default part.
 
 ```yaml
-# torchlight! {"lineNumbers": false}
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -202,21 +200,18 @@ default: &default
 After setting up file configuration, the next thing we have to do is Build services. Open your terminal and navigate to your project directory, run compose build to build or rebuild the services.
 
 ```bash
-# torchlight! {"lineNumbers": false}
 docker compose build
 ```
 
 It will take some time to download the image from Docker Hub if you haven't ruby image installed. And then run the application.
 
 ```bash
-# torchlight! {"lineNumbers": false}
 docker compose up
 ```
 
 if you got an error message around database setup things, run the database migration just like usual, the difference is you have to add docker command first
 
 ```bash
-# torchlight! {"lineNumbers": false}
 # Setup database
 docker compose run --rm app bundle exec rake db:setup
 

@@ -19,7 +19,6 @@ tags:
 Now, it is time to deploy the `add-users-table` branch into the main branch
 
 ```
-torchlight! {"lineNumbers": false}
 $ pscale deploy-request create fiber-pscale add-users-table
 Deploy request #1 successfully created.
 ```
@@ -31,7 +30,6 @@ Now check your dashboard, you'll see here that you requested schema changes from
 Now, approve the request and PlanetScale automatically apply the new schema into the main branch **without downtime**.
 
 ```
-torchlight! {"lineNumbers": false}
 $ pscale deploy-request deploy fiber-pscale 1
 Successfully deployed dhacze78ukhv from add-users-table to main.
 ```
@@ -43,7 +41,6 @@ Now, back and check the dashboard, it's deployed!🎊
 if you no longer need to make schema changes from the branch, now you can safely delete it.
 
 ```
-torchlight! {"lineNumbers": false}
 $ pscale branch delete fiber-pscale add-users-table
 ```
 
@@ -52,7 +49,6 @@ $ pscale branch delete fiber-pscale add-users-table
 Create a file called `users.go` inside the `handlers` directory. And now, create a connection to the main branch so the application can communicate with the database.
 
 ```
-torchlight! {"lineNumbers": false}
 $ pscale connect fiber-pscale main --port 3309
 ```
 
@@ -103,7 +99,7 @@ open `main.go`, add a new handler to call that function
 torchlight! {"lineNumbers": false}
 import (
     // ...
-    "github.com/maful/fiber-pscale/handlers" // [tl! add]
+    "github.com/maful/fiber-pscale/handlers" // shada:add
 )
 
 app.Get("/", func(c *fiber.Ctx) error {
@@ -111,13 +107,12 @@ app.Get("/", func(c *fiber.Ctx) error {
         "message": "API with Fiber and PlanetScale",
 		})
 })
-app.Post("/users", handlers.CreateUser)  // [tl! add]
+app.Post("/users", handlers.CreateUser)  // shada:add
 ```
 
 run the app, and try to create the user
 
-```curl
-torchlight! {"lineNumbers": false}
+```bash
 curl --location --request POST 'http://localhost:3000/users' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -148,7 +143,7 @@ response
 Still in `users.go`, create a new function called `GetUsers`.
 
 ```go
-func GetUsers(c *fiber.Ctx) error { // [tl! reindex(43)]
+func GetUsers(c *fiber.Ctx) error {
     var users []models.User
     models.DB.Find(&users)
 
@@ -161,15 +156,13 @@ func GetUsers(c *fiber.Ctx) error { // [tl! reindex(43)]
 Back to main.go and register the function to the app, place it above the create user handler.
 
 ```go
-// torchlight! {"lineNumbers": false}
-app.Get("/users", handlers.GetUsers) // [tl! add]
+app.Get("/users", handlers.GetUsers) // shada:add
 app.Post("/users", handlers.CreateUser)
 ```
 
 stop the existing app, and run again. You should always do this because the app doesn't refresh automatically when we made changes.
 
-```curl
-torchlight! {"lineNumbers": false}
+```bash
 curl --location --request GET 'http://localhost:3000/users'
 ```
 
@@ -196,7 +189,7 @@ response
 Add a new function called `GetUser` in the bottom of `GetUsers` function.
 
 ```go
-func GetUser(c *fiber.Ctx) error { // [tl! reindex(52)]
+func GetUser(c *fiber.Ctx) error {
     var user models.User
     if err := models.DB.First(&user, "id = ?", c.Params("id")).Error; err != nil {
         return c.Status(http.StatusNotFound).JSON(&fiber.Map{
@@ -213,15 +206,13 @@ func GetUser(c *fiber.Ctx) error { // [tl! reindex(52)]
 and add a new handler in `main.go`
 
 ```go
-// torchlight! {"lineNumbers": false}
 app.Get("/users", handlers.GetUsers)
-app.Get("/users/:id", handlers.GetUser) // [tl! ++]
+app.Get("/users/:id", handlers.GetUser) // shada:add
 ```
 
 now, we try to get the user details with id 1
 
-```curl
-torchlight! {"lineNumbers": false}
+```bash
 curl --location --request GET 'http://localhost:3000/users/1'
 ```
 
@@ -243,8 +234,7 @@ response
 
 if try to get the id that doesn't exist
 
-```curl
-torchlight! {"lineNumbers": false}
+```bash
 curl --location --request GET 'http://localhost:3000/users/100'
 ```
 

@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ["'Lexend'", ...defaultTheme.fontFamily.sans]
+        'sans': ["'Lexend'", ...defaultTheme.fontFamily.sans],
+        'dm-mono': ["'DM Mono'", ...defaultTheme.fontFamily.mono],
       }
     },
   },

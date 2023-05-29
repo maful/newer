@@ -1,4 +1,3 @@
-const { execSync } = require('child_process');
 const path = require("path");
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
@@ -104,11 +103,6 @@ module.exports = function(eleventyConfig) {
     }
 
     return content;
-  });
-
-  eleventyConfig.on('eleventy.after', async () => {
-    console.log('Building torchlight...');
-    console.log(execSync('npx torchlight').toString());
   });
 
   return {

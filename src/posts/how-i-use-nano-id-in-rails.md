@@ -283,12 +283,19 @@ Congratulations!🎉 You have successfully implementing Nano ID in Rails applica
 
 ## Conclusion
 
-Although using default primary key using `bigint` is good, we must have to look out requirements first. Define what the application needs, consider the pros and cons using different system.
+Although using the default primary key using `bigint` is good, we must have to look out for requirements first. Define what the application needs, and consider the pros and cons of using a different approach.
 
-Using random generated IDs like Nano ID could be good alternative, however as a developer we must understand what Nano ID really does in our application. Defining the number of characters in the generated IDs is also important, to help with that Nano ID has [Collision Calculator](https://zelark.github.io/nano-id-cc/) to give us how many years in order to have a 1% probability of collision.
+Using randomly generated IDs like Nano ID could be a good alternative, however, as a developer, we must understand what Nano ID really does in our application. Defining the number of characters in the generated IDs is also important, to help with that Nano ID has a [Collision Calculator](https://zelark.github.io/nano-id-cc/) to give us how many years in order to have a 1% probability of collision.
 
 ![Nano ID Calculator](https://res.cloudinary.com/newer/image/upload/v1685517597/blog/how-i-use-nano-id-in-rails/nanoid-calculator.png "Nano ID Calculator")
 
 In our case, we have 14 characters and it needs at least 57 thousand years to have 1% probability of collision if we generate 1000 IDs per hour.
 
 Download source code: https://github.com/daily-newer/rails-nanoid
+
+## References
+
+- https://github.com/ai/nanoid
+- https://zelark.github.io/nano-id-cc/
+- https://github.com/radeno/nanoid.rb
+- https://planetscale.com/blog/why-we-chose-nanoids-for-planetscales-api

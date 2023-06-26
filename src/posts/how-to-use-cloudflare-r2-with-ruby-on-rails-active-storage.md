@@ -210,7 +210,7 @@ Now your users can upload the file from the client side or normally called direc
 
 ## Conclusion
 
-Using object storage can help prevent issues such as infrastructure problems, cost overloads, and durability issues. While R2 may offer flexible pricing, as a developer, it's important to optimize the process by using caching strategies to further reduce costs.
+Using object storage can help you to not deal with infrastructure problems and durability issues as it is already handled by the service provider. While R2 may offer flexible pricing, as a developer, you may need to consider using caching strategies to further reduce costs.
 
 I have been using Cloudflare R2 in my recent projects, and overall my experience has been good. I appreciate the simplicity, performance, and pricing.
 

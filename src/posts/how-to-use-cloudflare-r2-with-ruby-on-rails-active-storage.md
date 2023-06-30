@@ -7,7 +7,8 @@ date: 2023-06-26
 color: night-fade-gradient
 illustration: cloudflare-r2-with-rails
 tags:
-  - Cloudflare R2
+  - Cloudflare
+  - R2
   - Ruby on Rails
   - Object Storage
 ---

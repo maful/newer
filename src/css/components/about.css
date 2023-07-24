@@ -25,14 +25,6 @@
     }
   }
 
-  &__illustration {
-    @apply block;
-
-    @media screen(md) {
-      @apply col-span-6;
-    }
-  }
-
   &__description {
     @apply block px-4 text-base font-light;
 
@@ -45,7 +37,7 @@
     }
 
     @media screen(lg) {
-      @apply col-span-6 text-lg;
+      @apply col-span-6 col-start-4 text-lg;
     }
   }
 

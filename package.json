@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf public",
-    "dev:css": "postcss ./src/css/application.css -o public/css/application.css --watch",
-    "dev:eleventy": "eleventy --serve",
+    "dev:css": "npx postcss ./src/css/application.css -o public/css/application.css --watch",
+    "dev:eleventy": "npx eleventy --serve",
     "dev": "npm-run-all clean --parallel dev:*",
     "build:css": "postcss src/css/application.css -o public/css/application.css",
     "build:css-minify": "lightningcss --minify public/css/application.css -o public/css/application.css",

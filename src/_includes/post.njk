@@ -18,6 +18,7 @@ layout: base.njk
       <section class="article__section">
         {{ content | safe }}
       </section>
+      <div id="comments" class="giscus w-full"></div>
     </article>
     <section class="promotion">
       {% set code = promotion_code if promotion_code else "people-management" | string %}
@@ -35,3 +36,19 @@ layout: base.njk
     </section>
   </div>
 </main>
+
+<script src="https://giscus.app/client.js"
+  data-repo="maful/newer"
+  data-repo-id="R_kgDOIbxFhQ"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOIbxFhc4CYFpy"
+  data-mapping="title"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  crossorigin="anonymous"
+  async>
+</script>

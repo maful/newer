@@ -15,22 +15,10 @@ nav {
   }
 
   .topbar {
-    @apply relative mx-auto flex items-center justify-between px-6;
-
-    @media screen(sm) {
-      @apply p-0;
-    }
-
-    @media screen(md) {
-      @apply justify-start;
-    }
+    @apply relative mx-auto flex flex-col items-center justify-between gap-4 px-6 sm:p-0 md:justify-start md:gap-8 lg:mx-0 lg:max-w-screen-lg lg:flex-row;
 
     &__logo-container {
-      @apply m-0 mb-4 cursor-pointer border-none shadow-none;
-
-      @media screen(sm) {
-        @apply m-2;
-      }
+      @apply m-0 mb-4 cursor-pointer border-none shadow-none sm:m-2;
     }
 
     &__logo {
@@ -39,11 +27,7 @@ nav {
   }
 
   .navbar {
-    @apply hidden overflow-auto p-0 uppercase;
-
-    @media screen(sm) {
-      @apply ml-16 flex list-none space-x-10;
-    }
+    @apply hidden overflow-auto p-0 uppercase sm:flex sm:list-none sm:space-x-6 md:space-x-8 lg:space-x-10;
 
     &__item {
       @apply inline-block text-base;
@@ -66,11 +50,7 @@ nav {
   }
 
   .mobile-navbar {
-    @apply flex list-none space-x-6 overflow-auto bg-gray-100/50 p-0 px-6 py-6 uppercase;
-
-    @media screen(sm) {
-      @apply hidden;
-    }
+    @apply flex list-none items-center justify-center space-x-4 overflow-auto bg-gray-100/50 p-0 px-4 py-6 uppercase sm:hidden;
 
     &__item {
       @apply inline-block text-base;

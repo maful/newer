@@ -6,6 +6,7 @@ opengrapgh: true
 date: 2023-05-31
 color: warm-flame-gradient
 illustration: nano_id_x_rails
+promotion_code: wrappedby
 tags:
   - Nano ID
   - Ruby on Rails

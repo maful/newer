@@ -21,6 +21,12 @@ const data = {
     "description": "Ruby bindings for the VersaFleet API",
     "color": "blue",
     "link": "https://github.com/maful/versafleet-ruby"
+  },
+  "wrappedby": {
+    "title": "WrappedBy",
+    "description": "Your ultimate destination for lightning-fast Ruby application deployment with near-zero configuration right onto your very OWN SERVER.",
+    "color": "blue",
+    "link": "https://wrappedby.com"
   }
 }
 

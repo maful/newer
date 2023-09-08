@@ -6,6 +6,7 @@ opengrapgh: true
 date: 2023-06-26
 color: night-fade-gradient
 illustration: cloudflare-r2-with-rails
+promotion_code: wrappedby
 tags:
   - Cloudflare
   - R2

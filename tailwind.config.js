@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         'sans': ["'Lexend'", ...defaultTheme.fontFamily.sans],
         'dm-mono': ["'DM Mono'", ...defaultTheme.fontFamily.mono],
+        'roboto-slab': ["'Roboto Slab'", ...defaultTheme.fontFamily.sans],
       }
     },
   },

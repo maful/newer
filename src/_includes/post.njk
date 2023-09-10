@@ -18,7 +18,7 @@ layout: base.njk
       <section class="article__section">
         {{ content | safe }}
       </section>
-      {% if NODE_ENV === 'production' %}
+      {% if process.env.NODE_ENV == 'production' %}
         <div id="comments" class="giscus w-full"></div>
       {% endif %}
     </article>
@@ -39,7 +39,7 @@ layout: base.njk
   </div>
 </main>
 
-{% if NODE_ENV === 'production' %}
+{% if process.env.NODE_ENV == 'production' %}
 <script src="https://giscus.app/client.js"
   data-repo="maful/newer"
   data-repo-id="R_kgDOIbxFhQ"

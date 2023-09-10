@@ -5,7 +5,6 @@ description: Build REST API with Go Fiber and in this tutorial we will deploy th
 opengrapgh: true
 date: 2022-10-19
 color: instagram-gradient
-illustration: person_working_online
 promotion_code: currency-conversion-ruby
 tags:
   - PlanetScale

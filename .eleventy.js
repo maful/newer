@@ -8,6 +8,7 @@ const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const ShadaIt = require("shada-it").default
+const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 async function imageShortcode(src, alt, options = {}) {
   const sizes = options.sizes || "100vw";
@@ -71,6 +72,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(svgContents);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(embedYouTube);
 
   eleventyConfig.addWatchTarget('./src/css/');
   eleventyConfig.addPassthroughCopy("src/assets/favicon");

@@ -5,7 +5,6 @@ description: One of the advantages to using Go is Standard Library, Go has built
 opengrapgh: true
 date: 2021-04-07
 color: juicy-peach-gradient
-illustration: browser_window_displaying_workspace
 tags:
   - Go
   - Application

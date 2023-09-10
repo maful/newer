@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "eleventy-plugin-svg-contents": "^0.7.0",
+    "eleventy-plugin-youtube-embed": "^1.9.0",
     "html-minifier": "^4.0.0",
     "lightningcss-cli": "^1.16.1",
     "luxon": "^3.1.0"

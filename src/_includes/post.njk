@@ -18,9 +18,7 @@ layout: base.njk
       <section class="article__section">
         {{ content | safe }}
       </section>
-      {% if process.env.NODE_ENV == 'production' %}
-        <div id="comments" class="giscus w-full"></div>
-      {% endif %}
+      <div id="comments" class="giscus w-full"></div>
     </article>
     <section class="promotion">
       {% set code = promotion_code if promotion_code else "people-management" | string %}
@@ -39,7 +37,6 @@ layout: base.njk
   </div>
 </main>
 
-{% if process.env.NODE_ENV == 'production' %}
 <script src="https://giscus.app/client.js"
   data-repo="maful/newer"
   data-repo-id="R_kgDOIbxFhQ"
@@ -55,4 +52,3 @@ layout: base.njk
   crossorigin="anonymous"
   async>
 </script>
-{% endif %}

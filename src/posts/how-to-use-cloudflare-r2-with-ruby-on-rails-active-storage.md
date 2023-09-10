@@ -5,7 +5,6 @@ description: Learn and implement Cloudflare R2 in Ruby on Rails application
 opengrapgh: true
 date: 2023-06-26
 color: night-fade-gradient
-illustration: cloudflare-r2-with-rails
 promotion_code: wrappedby
 tags:
   - Cloudflare
@@ -124,6 +123,8 @@ cloudflare:
 
 We are using Rails Credentials to save the sensitive information under `cloudflare` key. Note that the `service` is S3 because we will using S3 SDK for Ruby, remember that Cloudflare R2 is S3-compatible API.
 
+> Tired of the endless server configuration headaches? WrappedBy takes care of it all for you. Say goodbye to manual setup and hello to hassle-free deployment. Discover the ease of deploying Ruby apps with WrappedBy and revolutionize your development process. Start deploying with [WrappedBy](https://wrappedby.com)
+
 Because we will use R2 in development, edit the Rails Credentials for development by running
 
 ```
@@ -217,3 +218,9 @@ Using object storage can help you to not deal with infrastructure problems and d
 I have been using Cloudflare R2 in my recent projects, and overall my experience has been good. I appreciate the simplicity, performance, and pricing.
 
 Download the source code https://github.com/daily-newer/rails-cloudflare-r2
+
+---
+
+Ever wished deploying Ruby on Rails apps could be as easy as a few clicks? 🚀 Curious about a platform that promises to simplify the entire process? Well, your curiosity is about to pay off! Introducing WrappedBy, your ultimate destination for lightning-fast Ruby application deployment right onto your very own server. Check out our YouTube video here:
+
+https://www.youtube.com/watch?v=V8g8dQO5UXw&list=PLqU3tAyxlLTuChRN69oLDPf_BFHRe9owz

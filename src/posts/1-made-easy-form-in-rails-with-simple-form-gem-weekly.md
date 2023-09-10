@@ -5,7 +5,7 @@ description: There are many ways to create a form in Rails, whether you want to 
 opengrapgh: true
 date: 2022-11-19
 color: lady-lips-gradient
-illustration: person-learning-online
+promotion_code: wrappedby
 tags:
   - Gem Weekly
   - Ruby on Rails
@@ -110,6 +110,8 @@ bin/dev
 
 - We will replace the built-in form with `simple_form` to take an advantage of simplicity and flexibility.
 
+> When it comes to deploying Ruby on Rails applications, integration is key. With WrappedBy, you can seamlessly integrate your GitHub repositories and enjoy automated deployment. It's the perfect solution for developers looking to streamline their workflow. Start deploying with [WrappedBy](https://wrappedby.com)
+
 ### Install Simple Form
 
 - Add `simple_form` gem in your `Gemfile`. The run `bundle install` to install the gem
@@ -151,7 +153,7 @@ config.wrappers :vertical_form, tag: 'div', class: 'form-group', error_class: 'f
   b.use :placeholder
 ```
 
-Look at the `tag` and `class` option above, this is where the field wrapped by `div` element with class is `form-group`. To prove that, go back to your form in the browser and inspect the **********Title********** field. That’s where the configuration converted into the form. You could change the class or tag if you want, but remember to restart your server to apply the changes because you’re changing the file under the initializer directory.
+Look at the `tag` and `class` option above, this is where the field wrapped by `div` element with class is `form-group`. To prove that, go back to your form in the browser and inspect the **Title** field. That’s where the configuration converted into the form. You could change the class or tag if you want, but remember to restart your server to apply the changes because you’re changing the file under the initializer directory.
 
 ```html
 <div class="form-group string required post_title">
@@ -213,3 +215,9 @@ Check the result, as you can see the `label` has been omitted from the form
 ## Conclusion
 
 Not only build a really simple form, but you can also build a really complex form with Simple Form. Just think Simple form is just a mechanism to build a form components and you can reused it in anywhere in your application. You can download the [example code](https://github.com/daily-newer/gem-weekly-simple-form) on GitHub.
+
+---
+
+Are you tired of the complexities of deploying Ruby on Rails applications? Discover WrappedBy – the ultimate deployment solution for Ruby enthusiasts. Curious to see how it works? Check out our YouTube video here:
+
+https://www.youtube.com/watch?v=V8g8dQO5UXw&list=PLqU3tAyxlLTuChRN69oLDPf_BFHRe9owz

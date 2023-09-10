@@ -5,7 +5,6 @@ description: In this post, we will go through containerizing a Rails API applica
 opengrapgh: true
 date: 2021-07-21
 color: warm-flame-gradient
-illustration: person_donating_goods
 tags:
   - Ruby on Rails
   - Docker

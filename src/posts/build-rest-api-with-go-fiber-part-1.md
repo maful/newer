@@ -5,7 +5,6 @@ description: Fiber is web framework written in Go that much like Express in Node
 opengrapgh: true
 date: 2022-10-19
 color: night-fade-gradient
-illustration: person_working_online
 promotion_code: onsigned
 tags:
   - PlanetScale

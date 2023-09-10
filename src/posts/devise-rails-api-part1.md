@@ -5,7 +5,6 @@ description: When building API, one of the most important part is authentication
 opengrapgh: true
 date: 2021-04-06
 color: lady-lips-gradient
-illustration: person-practicing-yoga
 tags:
   - Ruby on Rails
   - Devise

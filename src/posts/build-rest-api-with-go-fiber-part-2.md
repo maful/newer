@@ -5,7 +5,6 @@ description: Build REST API with Go Fiber and in this tutorial we will connect t
 opengrapgh: true
 date: 2022-10-19
 color: spring-warmth-gradient
-illustration: person_working_online
 promotion_code: versafleet-api
 tags:
   - PlanetScale

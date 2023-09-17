@@ -28,7 +28,7 @@
     @apply px-4;
 
     @media screen(lg) {
-      @apply col-span-8 py-0 px-8;
+      @apply col-span-8 px-8 py-0;
     }
 
     &__heading {
@@ -46,7 +46,7 @@
     }
 
     &__section {
-      @apply space-y-6 py-8 px-0 text-base font-light;
+      @apply space-y-6 px-0 py-8 text-base font-light;
       color: rgb(34, 31, 44);
 
       @media screen(md) {
@@ -63,7 +63,8 @@
         line-height: 1.3;
       }
 
-      p {
+      p,
+      li {
         line-height: 1.7;
 
         a {
@@ -114,7 +115,7 @@
     }
 
     .topics {
-      @apply mt-8 mb-8 block max-w-sm;
+      @apply mb-8 mt-8 block max-w-sm;
 
       &__heading {
         @apply mb-2 text-xl font-normal;
@@ -135,7 +136,7 @@
   @apply col-span-4;
 
   &__content {
-    @apply rounded-[5rem] py-10 px-14;
+    @apply rounded-[5rem] px-14 py-10;
   }
 
   &__title {

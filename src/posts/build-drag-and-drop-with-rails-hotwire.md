@@ -20,7 +20,7 @@ Hey there, fellow web adventurers! 😄 Building web applications can be a wild 
 
 We've got a secret weapon up our sleeves: [UpperBracket](https://github.com/maful/upperbracket). It's like having a magic wand for generating full-stack Rails applications. It comes with all the goodies – Vite, Tailwind CSS, Rodauth, Rubocop, and more – so we can focus on the fun stuff. Let's keep this between us, though! 😉
 
-Curious about the final result, here it is
+Curious about the final result, here the [demo](https://twitter.com/mafulprayoga/status/1700544976961384775).
 
 ## Let’s build
 
